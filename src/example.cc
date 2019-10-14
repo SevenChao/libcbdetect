@@ -14,6 +14,9 @@ void detect(const char* str, cbdetect::CornerType corner_type) {
   std::vector<cbdetect::Board> boards;
   cbdetect::Params params;
   params.corner_type = corner_type;
+  params.show_debug_image = true;
+  params.norm = true;
+  // params.show_grow_processing = true;
 
   cv::Mat img = cv::imread(str, cv::IMREAD_COLOR);
 
@@ -32,8 +35,8 @@ void detect(const char* str, cbdetect::CornerType corner_type) {
 
 int main(int argc, char* argv[]) {
   printf("chessboards...");
-  detect("../../example_data/e2.png", cbdetect::SaddlePoint);
+  detect("/home/tusimple-cb/chessboard_detect/libcbdetect/example_data/e5.png", cbdetect::SaddlePoint);
   printf("deltilles...");
-  detect("../../example_data/e6.png", cbdetect::MonkeySaddlePoint);
+  detect("/home/tusimple-cb/chessboard_detect/libcbdetect/example_data/e6.png", cbdetect::MonkeySaddlePoint);
   return 0;
 }

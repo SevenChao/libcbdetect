@@ -147,7 +147,8 @@ void find_corners(const cv::Mat& img, Corner& corners, const Params& params) {
     cv::cvtColor(img, img_norm, CV_BGR2GRAY);
 #endif
     img_norm.convertTo(img_norm, CV_64F, 1. / 255., 0);
-  } else {
+  } 
+  else {
     img.convertTo(img_norm, CV_64F, 1. / 255., 0);
   }
 
